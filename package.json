@@ -3,14 +3,14 @@
   "version": "0.4.0",
   "description": "EDGE Connector is a reverse proxy which adds CORS headers to the proxied request. Request URL is taken from the path",
   "license": "MIT",
-  "author": "Rob Wu <rob@robwu.nl>",
+  "author": "jailbreak",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rob--W/edge-connector.git"
+    "url": "https://github.com/jailbreak26/edge-connector.git"
   },
   "bugs": {
-    "url": "https://github.com/Rob--W/edge-connector/issues/",
-    "email": "rob@robwu.nl"
+    "url": "https://github.com/jailbreak26/edge-connector/issues/",
+    "email": "jailbreak31@gmail.com"
   },
   "keywords": [
     "cors",
