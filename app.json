@@ -1,0 +1,12 @@
+{
+  "name": "edge-connector",
+  "description": "edge-connector is a CORS",
+  "website": "https://github.com/jailbreak26/edge-connector",
+  "repository": "https://github.com/jailbreak26/edge-connector",
+  "keywords": [
+    "cors",
+    "proxy",
+    "server",
+    "heroku"
+  ]
+}
