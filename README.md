@@ -138,7 +138,7 @@ For instance, to run a EDGE Connector server that accepts any request from some 
 port 8080, use:
 ```
 export PORT=8080
-export CORSANYWHERE_WHITELIST=https://example.com,http://example.com,http://example.com:8080
+export EDGECONNECTOR_WHITELIST=https://example.com,http://example.com,http://example.com:8080
 node server.js
 ```
 
@@ -152,8 +152,8 @@ except for my.example.com and my2.example.com (which may be unlimited), use:
 
 ```
 export PORT=8080
-export CORSANYWHERE_BLACKLIST=https://abuse.example.com,http://abuse.example.com
-export CORSANYWHERE_RATELIMIT='50 3 my.example.com my2.example.com'
+export EDGECONNECTOR_BLACKLIST=https://abuse.example.com,http://abuse.example.com
+export EDGECONNECTOR_RATELIMIT='50 3 my.example.com my2.example.com'
 node server.js
 ```
 
