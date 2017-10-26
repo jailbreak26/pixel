@@ -1,1 +1,4 @@
-CORS Wizler enables cross-origin requests to anywhere.
+CORS Wizler enables cross-origin requests to web files:
+
+Modifier: http://wizler.net
+Origin: Credits to cors-anywhere of Rob Wu
