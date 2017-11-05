@@ -1,11 +1,8 @@
 {
   "name": "edge-connector",
-  "description": "edge-connector is a CORS",
+  "description": "edge-connector is a CORS.",
   "website": "https://github.com/jailbreak26/edge-connector",
   "repository": "https://github.com/jailbreak26/edge-connector",
-    "require": {
-    "php": "5.6.0"
-},  
   "keywords": [
     "cors",
     "proxy",
