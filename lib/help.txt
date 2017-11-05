@@ -1,3 +1,3 @@
-CORS Wizler is a proxy that enables cross-origin requests to any web files.
+cors-wizler is a proxy that enables cross-origin requests to any web files.
 
-Modifier: http://wizler.net
+Info: http://wizler.net/cors-wizler.html
