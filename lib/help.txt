@@ -1,3 +1,3 @@
-cors-wizler is a proxy that enables cross-origin requests to any web files.
+CORS is a proxy that enables cross-origin requests to any web files.
 
 Info: http://wizler.net/cors-wizler.html
