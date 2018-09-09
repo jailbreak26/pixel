@@ -1,3 +1,1 @@
-CORS is a proxy that enables cross-origin requests to any web files.
-
-Info: http://wizler.net/cors-wizler.html
+when you say nothing at all
