@@ -23,11 +23,11 @@
   "devDependencies": {
     "coveralls": "^3.0.9",
     "eslint": "^4.18.2",
-    "istanbul": "^0.4.2",
-    "lolex": "^1.5.0",
-    "mocha": "^3.4.2",
-    "nock": "^8.2.1",
-    "supertest": "^2.0.1"
+    "istanbul": "^0.4.5",
+    "lolex": "^5.1.1",
+    "mocha": "^6.2.2",
+    "nock": "^11.7.0",
+    "supertest": "^4.0.2"
   },
   "scripts": {
     "lint": "eslint .",
