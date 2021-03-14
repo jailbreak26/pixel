@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var host = process.env.PORT ? '0.0.0.0' : '127.0.0.1';
-var port = process.env.PORT || 1337;
+var port = process.env.PORT || 8443;
 
 var cors_proxy = require('./lib/edge-connector');
 cors_proxy.createServer({
