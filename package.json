@@ -1,12 +1,12 @@
 {
-  "name": "edge-connector",
+  "name": "pixel",
   "version": "0.4.0",
-  "description": "EDGE Connector is a CORS",
+  "description": "pixel is a connector",
   "license": "MIT",
   "author": "jailbreak",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jailbreak26/edge-connector.git"
+    "url": "https://github.com/jailbreak26/pixel.git"
   },
   "keywords": [
     "cors",
