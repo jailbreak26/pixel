@@ -15,7 +15,7 @@
     "proxy",
     "heroku"
   ],
-  "main": "./lib/edge-connector.js",
+  "main": "./lib/pixel-connector.js",
   "dependencies": {
     "http-proxy": "1.18.1",
     "proxy-from-env": "0.0.1"
