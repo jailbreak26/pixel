@@ -1,8 +1,8 @@
 {
   "name": "pixel",
   "description": "pixel is a connector.",
-  "website": "https://github.com/jailbreak26/edge-connector",
-  "repository": "https://github.com/jailbreak26/edge-connector",
+  "website": "https://github.com/jailbreak26/pixel",
+  "repository": "https://github.com/jailbreak26/pixel",
   "keywords": [
     "cors",
     "proxy",
