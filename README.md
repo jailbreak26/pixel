@@ -1,4 +1,4 @@
-pixel is a connector.
+pixel cloud ID.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/jailbreak26/pixel.git)
 
