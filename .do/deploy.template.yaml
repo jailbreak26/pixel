@@ -1,7 +1,0 @@
-spec:
- name: pixel
- services:
- - name: web
-   git:
-     branch: main
-     repo_clone_url: https://github.com/jailbreak26/pixel.git
