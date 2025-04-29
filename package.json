@@ -35,7 +35,7 @@
     "test-coverage": "istanbul cover ./node_modules/.bin/_mocha -- test/test.js test/test-ratelimit.js --reporter spec"
   },
   "engines": {
-    "node": "16.20.0",
-    "npm": ">=8.19.4"
+    "node": "22.15.0",
+    "npm": ">=10.9.2"
   }
 }
