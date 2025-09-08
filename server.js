@@ -19,25 +19,25 @@ cors_proxy.createServer({
       const referer = req.headers.referer || '';
       const origin = req.headers.origin || '';
 
-      // Block if both headers are missing
-      if (!referer && !origin) {
-        return new Error('Forbidden: Missing origin or referer');
-      }
+      // Treat missing headers as anonymous
+      const isAnonymous = !referer && !origin;
 
+      // Check if request is from allowed domain
       const isAllowed = allowedDomains.some(domain =>
         referer.startsWith(domain) || origin.startsWith(domain)
       );
 
-      if (!isAllowed) {
-        return new Error('Forbidden: Unauthorized domain');
+      if (isAnonymous || !isAllowed) {
+        return new Error('Forbidden: Unauthorized or anonymous domain');
       }
 
-      return null; // Allow request
+      return null;
     } catch (err) {
       console.error('RateLimit check failed:', err);
       return new Error('Internal proxy error');
     }
-  }
+  },
+  handleProxyErrors: true // Optional: ensure upstream errors like 429 are passed through
 }).listen(port, host, () => {
   console.log(`Running Pixel Connector on ${host}:${port}`);
 });
