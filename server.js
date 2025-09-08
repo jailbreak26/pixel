@@ -19,6 +19,11 @@ cors_proxy.createServer({
       const referer = req.headers.referer || '';
       const origin = req.headers.origin || '';
 
+      // Block if both headers are missing
+      if (!referer && !origin) {
+        return new Error('Forbidden: Missing origin or referer');
+      }
+
       const isAllowed = allowedDomains.some(domain =>
         referer.startsWith(domain) || origin.startsWith(domain)
       );
