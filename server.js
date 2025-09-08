@@ -15,18 +15,23 @@ cors_proxy.createServer({
   requireHeader: ['origin', 'x-requested-with', 'content-type', 'accept'],
   removeHeaders: ['cookie', 'cookie2'],
   checkRateLimit: function(req) {
-    const referer = req.headers.referer || '';
-    const origin = req.headers.origin || '';
+    try {
+      const referer = req.headers.referer || '';
+      const origin = req.headers.origin || '';
 
-    const isAllowed = allowedDomains.some(domain =>
-      referer.startsWith(domain) || origin.startsWith(domain)
-    );
+      const isAllowed = allowedDomains.some(domain =>
+        referer.startsWith(domain) || origin.startsWith(domain)
+      );
 
-    if (!isAllowed) {
-      return 'Forbidden: Unauthorized domain';
+      if (!isAllowed) {
+        return new Error('Forbidden: Unauthorized domain');
+      }
+
+      return null; // Allow request
+    } catch (err) {
+      console.error('RateLimit check failed:', err);
+      return new Error('Internal proxy error');
     }
-
-    return null; // Allow request
   }
 }).listen(port, host, () => {
   console.log(`Running Pixel Connector on ${host}:${port}`);
