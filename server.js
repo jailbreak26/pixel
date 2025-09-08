@@ -3,29 +3,12 @@
 const cors_proxy = require('./lib/pixel-connector');
 
 const port = process.env.PORT || 1337;
-const host = '0.0.0.0';
-
-const allowedOrigins = [
-  'https://streamwink.com',
-  'https://xignos.com'
-];
+const host = '0.0.0.0'; // Required for Heroku and public access
 
 cors_proxy.createServer({
-  originWhitelist: [], // Allow all origins (CORS-wise)
-  requireHeader: ['origin'],
-  removeHeaders: ['cookie', 'cookie2'],
-  setHeaders: function(req, res) {
-    const origin = req.headers.origin || '';
-
-    if (allowedOrigins.includes(origin)) {
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-      res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    } else {
-      // Explicitly block CORS for unauthorized origins
-      res.removeHeader('Access-Control-Allow-Origin');
-    }
-  }
+    originWhitelist: [], // Allow all origins
+    requireHeader: ['origin', 'x-requested-with', 'content-type', 'accept'],
+    removeHeaders: ['cookie', 'cookie2']
 }).listen(port, host, () => {
-  console.log(`Running Pixel Connector with strict CORS enforcement on ${host}:${port}`);
+    console.log(`Running Pixel Connector on ${host}:${port}`);
 });
