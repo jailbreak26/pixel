@@ -19,25 +19,25 @@ cors_proxy.createServer({
       const referer = req.headers.referer || '';
       const origin = req.headers.origin || '';
 
-      // Treat missing headers as anonymous
-      const isAnonymous = !referer && !origin;
+      // Treat missing headers as anonymous hotlink attempt
+      if (!referer && !origin) {
+        return new Error('Forbidden: Missing origin or referer');
+      }
 
-      // Check if request is from allowed domain
       const isAllowed = allowedDomains.some(domain =>
         referer.startsWith(domain) || origin.startsWith(domain)
       );
 
-      if (isAnonymous || !isAllowed) {
-        return new Error('Forbidden: Unauthorized or anonymous domain');
+      if (!isAllowed) {
+        return new Error('Forbidden: Hotlink protection triggered');
       }
 
-      return null;
+      return null; // Allow request
     } catch (err) {
-      console.error('RateLimit check failed:', err);
+      console.error('Hotlink check failed:', err);
       return new Error('Internal proxy error');
     }
-  },
-  handleProxyErrors: true // Optional: ensure upstream errors like 429 are passed through
+  }
 }).listen(port, host, () => {
-  console.log(`Running Pixel Connector on ${host}:${port}`);
+  console.log(`Running Pixel Connector with hotlink protection on ${host}:${port}`);
 });
