@@ -2,7 +2,7 @@
 
 const cors_proxy = require('./lib/pixel-connector');
 
-const port = process.env.PORT || 1337;
+const port = process.env.PORT || 8880;
 const host = '0.0.0.0'; // Required for Heroku and public access
 
 cors_proxy.createServer({
